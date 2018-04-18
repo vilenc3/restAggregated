@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/var/www/html/DAL/userDAL.php</file>
+            <file>file:/var/www/html/index.php</file>
+            <file>file:/var/www/html/DAL/districtDAL.php</file>
+            <file>file:/var/www/html/BL/user_has_restaurant.php</file>
+            <file>file:/var/www/html/DataAbstraction/DB.php</file>
+            <file>file:/var/www/html/DAL/restaurantDAL.php</file>
+            <file>file:/var/www/html/DAL/restaurant_has_categoryDAL.php</file>
+            <file>file:/var/www/html/BL/user.php</file>
+            <file>file:/var/www/html/BL/restaurant_has_category.php</file>
+            <file>file:/var/www/html/BL/district.php</file>
+            <file>file:/var/www/html/DAL/gradeDAL.php</file>
+            <file>file:/var/www/html/DAL/reviewDAL.php</file>
+            <file>file:/var/www/html/DAL/user_has_restaurantDAL.php</file>
+            <file>file:/var/www/html/BL/user_has_favourite.php</file>
+            <file>file:/var/www/html/DAL/user_has_favouriteDAL.php</file>
+            <file>file:/var/www/html/DAL/categoryDAL.php</file>
+            <file>file:/var/www/html/BL/restaurant.php</file>
+            <file>file:/var/www/html/BL/grade.php</file>
+            <file>file:/var/www/html/BL/category.php</file>
+            <file>file:/var/www/html/BL/review.php</file>
+        </group>
+    </open-files>
+</project-private>
