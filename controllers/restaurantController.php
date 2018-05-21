@@ -18,6 +18,12 @@ class restaurantController {
         if(isset($_POST['create-restaurant'])){
             self::createRestaurant();
         }
+        if(isset($_POST['delete-restaurant'])){
+            self::deleteRestaurant();
+        }
+        if(isset($_POST['update-restaurant'])){
+            self::updateRestaurant();
+        }
         if(isset($_POST['review-restaurant'])){
             self::reviewRestaurant();
         }
@@ -37,8 +43,27 @@ class restaurantController {
         $restaurant->name=$_POST['name'];
         $restaurant->description=$_POST['description'];
         $restaurant->phone=$_POST['phone'];
+        $restaurant->address=$_POST['address'];
         $restaurant->district_id=$_POST['district_id'];
+        #$restaurant->isSponsored=$_POST['isSponsored'];
         $restaurant->create();
+    }
+
+    public static function deleteRestaurant(){
+        $restaurant = new restaurant();
+        $restaurant->id=$_POST['id'];
+        $restaurant->delete();
+    }
+
+    public static function updateRestaurant(){
+        $restaurant = new restaurant();
+        $restaurant->id=$_POST['id'];
+        $restaurant->name=$_POST['name'];
+        $restaurant->description=$_POST['description'];
+        $restaurant->phone=$_POST['phone'];
+        $restaurant->address=$_POST['address'];
+        $restaurant->district_id=$_POST['district_id'];
+        $restaurant->update();
     }
     
         public static function reviewRestaurant(){

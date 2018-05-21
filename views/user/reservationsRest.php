@@ -1,4 +1,7 @@
 <center>
+<br>
+
+<iframe src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=pl.christian%23holiday%40group.v.calendar.google.com&amp;color=%2329527A&amp;ctz=Europe%2FWarsaw" style="border-width:0" width="700" height="400" frameborder="0" scrolling="no"></iframe>
 
 <?php
 

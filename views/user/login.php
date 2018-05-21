@@ -17,4 +17,8 @@
 </div>
 
 </form>
+ <?php if (count($_POST)>0) echo "<script type='text/javascript'>alert('Log in sucessful!');</script>"; ?>
 </center>
+
+
+            

@@ -73,7 +73,7 @@ if(isset($_SESSION['username'])){?>
     </div>
     <label for="comments">Write any comments (optional):</label> 
     <div id="textarea">
-      <textarea name='comments' id='comments' cols="40" rows="13" ></textarea><br />
+      <textarea name='comments' id='comments' cols="40" rows="5" ></textarea><br />
     </div>
         <input type='hidden' name='idUser' id='idUser' value='<?php echo $_SESSION['id']; ?>' required/>
         <input type='hidden' name='idRestaurant' id='idRestaurant' value='<?php echo $_GET['id']; ?>' required/>
@@ -137,6 +137,24 @@ function msg() {
     <img src="https://picsum.photos/300/200?image=642" alt="Photo7" width="300" height="200">
   </a>
   <div class="desc">Photo 7</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="https://picsum.photos/300/200?image=642">
+    <img src="https://picsum.photos/300/200?image=742" alt="Photo8" width="300" height="200">
+  </a>
+  <div class="desc">Photo 8</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="https://picsum.photos/300/200?image=642">
+    <img src="https://picsum.photos/300/200?image=342" alt="Photo9" width="300" height="200">
+  </a>
+  <div class="desc">Photo 9</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="https://picsum.photos/300/200?image=642">
+    <img src="https://picsum.photos/300/200?image=905" alt="Photo10" width="300" height="200">
+  </a>
+  <div class="desc">Photo 10</div>
 </div>
 
 </body>

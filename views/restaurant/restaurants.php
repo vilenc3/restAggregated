@@ -1,8 +1,5 @@
 <center><form method="post">
-        Filter<br>
-		<label for="name">Restaurant Name:</label>
-                <input id="name" type="text" name="name" placeholder="restaurant name">
-                
+        <br>                
                 <label for="average_pricing">Minimal pricing:</label>
                 <input id="average_pricing" type="number" step="any" name="average_pricing" min="0" max="10" placeholder="1 - most expensive">
                 
@@ -15,10 +12,7 @@
                 <label for="average_quality">Minimal quality:</label>
                 <input id="average_quality" type="number" step="any" name="average_quality" min="0" max="10" placeholder="1 - worst quality">
            
-
-	<div class="row-form">
-        <input type="submit"  value="Submit" name="filter-restaurant">
-    </div>
+                 <input type="submit"  value="Submit" name="filter-restaurant">
 </form>
 </center>
 
@@ -26,7 +20,6 @@
 if(isset($_POST['filter-restaurant'])){
  
         $m=new restaurant();
-            $m->name=$_POST['name'];
             $m->average_pricing=($_POST['average_pricing']);
             $m->average_speed=($_POST['average_speed']);
             $m->average_presentation=($_POST['average_presentation']);
@@ -38,20 +31,53 @@ if(isset($_POST['filter-restaurant'])){
 }
 
 ?>
- <center>
- <table id="display">
-      
+
   <?php        
         while ($row=$restaurant->fetch()){ 
 ?>
-            <tr>                  
-                <td><h4><a href="index.php?page=restaurant/restaurant&id=<?php echo $row->id; ?>"><?php echo $row->name; }?></a></h4></td>
-<!--                 <td><?php// echo $row->average_pricing; ?><br></td>
-                <td><?php// echo $row->average_speed; ?><br></td>
-                <td><?php// echo $row->average_presentation; ?><br></td>
-                <td><?php// echo $row->average_quality; }?><br></td> -->
-            </tr>
+                <?php
+                $randNum1 =  rand(1,300);
+                $randNum2 = rand(1,300);
+                $randNum3 = rand(1,300);
+                ?>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="index.php?page=restaurant/restaurant&id=<?php echo $row->id; ?>" target="_blank">
+          <img src="https://picsum.photos/300/200?image=<?php echo $randNum1-1;?>" style="width:100%">
+          <div class="caption">
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="index.php?page=restaurant/restaurant&id=<?php echo $row->id; ?>" target="_blank">
+          <img src="https://picsum.photos/300/200?image=<?php echo $randNum2-1;?>" style="width:100%">
+          <div class="caption">
+            <center>
+            <a href="index.php?page=restaurant/restaurant&id=<?php echo $row->id; ?>"><?php echo $row->name; ?></a></h4>
+            </center>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="index.php?page=restaurant/restaurant&id=<?php echo $row->id; ?>" target="_blank">
+          <img src="https://picsum.photos/300/200?image=<?php echo $randNum3-1;?>" style="width:100%">
+          <div class="caption">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
  <?php 
+}
                $restaurant->closeCursor(); 
 ?>
-    </table></center>
+

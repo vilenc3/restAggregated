@@ -48,7 +48,7 @@ class reservationsDAL {
         $query="SELECT name, phone, date, time, numberPpl, comments, CASE WHEN status = 1 THEN 'Pending' WHEN status = 2 THEN 'Rejected' WHEN status = 3 THEN 'Accepted!' END AS status FROM reservations
           INNER JOIN restaurant ON reservations.idRestaurant = restaurant.id
             INNER JOIN user ON reservations.idUser = user.id
-                    WHERE idUser= :idUser ";
+                    WHERE idUser= :idUser ORDER BY idReserv DESC";
         $params=[
           ':idUser' => $e->idUser,
         ];
@@ -66,7 +66,7 @@ class reservationsDAL {
         $query="SELECT idReserv, username, email, date, time, numberPpl, comments, CASE WHEN status = 1 THEN 'Pending' WHEN status = 2 THEN 'Rejected' WHEN status = 3 THEN 'Accepted!' END AS status FROM reservations
           INNER JOIN restaurant ON reservations.idRestaurant = restaurant.id
             INNER JOIN user ON reservations.idUser = user.id
-                    WHERE idRestaurant = 1 ORDER BY date DESC";
+                    WHERE idRestaurant = 3 ORDER BY idReserv DESC";
         $params=[
           ':idRestaurant' => $e->idRestaurant,
         ];

@@ -8,6 +8,7 @@ class restaurant {
     public $phone;
     public $address;
     public $district_id;
+    public $isSponsored;
     
  
     public function create() {
@@ -20,7 +21,8 @@ class restaurant {
     }
    
     public function update() {
-        return(restaurantDAL::update($this));    
+        return(restaurantDAL::update($this));
+        return($res);    
     }
     public static function retrieveAll(){
         return(restaurantDAL::retrieveAll());

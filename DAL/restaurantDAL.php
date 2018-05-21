@@ -14,7 +14,7 @@ class restaurantDAL {
           ':address'=> $e->address,
           ':district_id'=> $e->district_id
         ];
-        echo 'Record added successfully';
+        #echo 'Record added successfully';
         $res=$db->query($query, $params);
         return($res);
     }
@@ -23,13 +23,14 @@ class restaurantDAL {
         $db=DB::getDB();
         $query = ('DELETE FROM restaurant WHERE id = :id');
         $db->query($query, [':id'=>$e->id]);
-        echo 'Record deleted successfully';
+        #echo 'Record deleted successfully';
     }
    
     public static function update($e){
         $db=DB::getDB();
-        $query=('UPDATE actor ' . 'SET  name=:name, description=:description, phone=:phone, address=:address, district_id=:district_id  WHERE id = :id');
+        $query=('UPDATE restaurant SET  name=:name, description=:description, phone=:phone, address=:address, district_id=:district_id  WHERE id = :id');
         $params=[
+          ':id'=> $e->id,
           ':name'=> $e->name,
           ':description'=> $e->description,
           ':phone'=> $e->phone,
@@ -43,7 +44,7 @@ class restaurantDAL {
    
     public static function retrieveAll() {
         $db=DB::getDB();
-        $query="SELECT * FROM restaurant INNER JOIN grade ON restaurant.id = grade.restaurant_id ORDER BY restaurant.id ASC";
+        $query="SELECT * FROM restaurant INNER JOIN grade ON restaurant.id = grade.restaurant_id ORDER BY isSponsored DESC,restaurant.id ASC";
        
         $res=$db->query($query);
         $res->setFetchMode(PDO::FETCH_CLASS, "restaurant");
@@ -57,10 +58,7 @@ class restaurantDAL {
         $params=[];
         
         $cond=[];
-        if(isset($e->name) && !empty($e->name)){
-            $cond[]="name=':name'";
-            $params[':name'] = $e->name;
-        }
+        
         if(isset($e->average_pricing) && !empty($e->average_pricing) ){
             $cond[]="average_pricing>=:average_pricing";
             $params[':average_pricing'] = $e->average_pricing;
@@ -77,9 +75,10 @@ class restaurantDAL {
             $cond[]="average_quality>=:average_quality";
             $params[':average_quality']= $e->average_quality;
         }
+        $isSponsoredVAR = " ORDER BY isSponsored DESC;";
         $cond_str=implode(" AND ", $cond);
         if(!empty($cond_str)){
-            $query.=" WHERE ".$cond_str;
+            $query.=" WHERE ".$cond_str.$isSponsoredVAR;
          }
         $res=$db->query($query, $params); 
         $res->setFetchMode(PDO::FETCH_CLASS, "restaurant");

@@ -1,5 +1,4 @@
-<h1>Register</h1>
-
+<br><br><br>
 <center><form method="post">
 	<div>
 		<label for="username">Username:</label>
@@ -30,4 +29,5 @@
         <input type="submit"  value="Submit" name="create-user">
     </div>
 </form>
+ <?php if (count($_POST)>0) echo "<script type='text/javascript'>alert('Register sucessful! Log in now.');</script>"; ?>
 </center>

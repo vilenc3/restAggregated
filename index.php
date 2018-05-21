@@ -45,9 +45,9 @@ mainController::process();
       margin-bottom: 30px;
   }  
   .jumbotron {
-      background-color: #f4511e;
+      background-color: #ffffff;
       color: #fff;
-      padding: 100px 25px;
+      padding: 50px 25px;
       font-family: Montserrat, sans-serif;
   }
   .container-fluid {
@@ -243,6 +243,9 @@ if(!isset($_SESSION['username'])){ ?>
 ?><li><?php if(isset($_SESSION['username'])){ ?>
 <li><a href="index.php?page=user/reservationsUser">My Reservations</a></li>
 <li><a href="index.php?page=user/logout">Logout</a></li>
+<?php if($_SESSION['isAdmin'] == '1'){ ?>
+<li><a href="index.php?page=admin/adminPanel">Admin Panel</a></li>
+<?php }?>
 <?php }?>
 <li><?php if(isset($_SESSION['isRestaurator']) && $_SESSION['isRestaurator'] == '1'){ ?>
 <li><a href="index.php?page=user/reservationsRest">Restaurant Reservations</a></li>
